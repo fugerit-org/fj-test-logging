@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.fugerit.java.test</groupId>
+	<artifactId>fj-test-logging</artifactId>
+
+	<name>fj-test-logging</name>
+	<description>Project to test slf4 library</description>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java-version-compliance>1.8</java-version-compliance>
+		<maven.compiler.source>${java-version-compliance}</maven.compiler.source>
+		<maven.compiler.target>${java-version-compliance}</maven.compiler.target>
+		<slf4j-version>2.0.7</slf4j-version>
+	</properties>
+
+	<build>
+
+	</build>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.26</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<organization>
+		<url>https://www.fugerit.org</url>
+		<name>Fugerit</name>
+	</organization>
+
+	<url>https://www.fugerit.org/perm/venus/</url>
+
+	<profiles>
+
+		<profile>
+			<id>full</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<stylesheetfile>src/main/javadoc/stylesheet.css</stylesheetfile>
+						</configuration>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
+
+</project>
